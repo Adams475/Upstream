@@ -192,7 +192,6 @@ class H264Encoder: NSObject {
               let pps = pps else { return }
         
         [Data(bytes: sps, count: spsSize), Data(bytes: pps, count: ppsSize)].forEach {
-            print($0)
             naluHandling?(H264Encoder.naluStartCode + $0, 0)
         }
     }

@@ -55,6 +55,7 @@ class TCPStreamer: NSObject, StreamDelegate {
     func send(data: Data, type: Int, streamId: String) {
         guard state == .ready else { return }
         var req = makeSendServerDataHTTPHeader(data: data, type: type, streamId: streamId)
+        print(data.map { String(format: "%02x", $0) }.joined())
         req += data
         queuedData += data.count
         connection?.send(content: req,
