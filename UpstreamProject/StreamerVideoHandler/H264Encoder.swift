@@ -24,8 +24,8 @@ class H264Encoder: NSObject {
     
     // MARK: - nalu hanlding(we will discuss about these later)
     
-    private static let naluStartCode = Data([UInt8](arrayLiteral: 0x00, 0x00, 0x00, 0x01))
-    var naluHandling: ((Data, Int) -> Void)?
+    private static let naluStartCode = Data([UInt8](arrayLiteral: 0xDE, 0xCA, 0xFF, 0xBE))
+    var naluHandling: ((Data, Int, UInt8) -> Void)?
     var rawDataHandling: ((CMSampleBuffer) -> Void)?
         
     // MARK: - init
@@ -75,7 +75,6 @@ class H264Encoder: NSObject {
               let px = CMSampleBufferGetImageBuffer(buffer) else { return }
         let timeStamp = CMSampleBufferGetPresentationTimeStamp(buffer)
         let duration = CMSampleBufferGetDuration(buffer)
-        
         VTCompressionSessionEncodeFrame(session,
                                         imageBuffer: px,
                                         presentationTimeStamp: timeStamp,
@@ -149,9 +148,21 @@ class H264Encoder: NSObject {
                             count: Int(nextNALULength))
             
             packageStartIndex += (4 + Int(nextNALULength))
-
-
-            encoder.naluHandling?(H264Encoder.naluStartCode + nalu, 1)
+            let typeNumber = nalu[0] & 0x1F
+            if (typeNumber == 6) {
+                //print(nalu.map { String(format: "%02x", $0) }.joined())
+            }
+            if (typeNumber == 5 || typeNumber == 1) {
+                //print(nalu.count + 4)
+            }
+            do {
+                let compressedData = try (nalu as NSData).compressed(using: .lzfse)
+                encoder.naluHandling?(H264Encoder.naluStartCode + compressedData, 1, typeNumber)
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
         }
     }
     
@@ -191,8 +202,16 @@ class H264Encoder: NSObject {
         guard let sps = sps,
               let pps = pps else { return }
         
-        [Data(bytes: sps, count: spsSize), Data(bytes: pps, count: ppsSize)].forEach {
-            naluHandling?(H264Encoder.naluStartCode + $0, 0)
+        do {
+            try [Data(bytes: sps, count: spsSize), Data(bytes: pps, count: ppsSize)].forEach {
+                //print($0.map { String(format: "%02x", $0) }.joined())
+                
+                let compressedData = try ($0 as NSData).compressed(using: .lzfse)
+                naluHandling?(H264Encoder.naluStartCode + compressedData, 0, $0[0] & 0x1f)
+            }
+        }
+        catch {
+            print(error.localizedDescription)
         }
     }
 }

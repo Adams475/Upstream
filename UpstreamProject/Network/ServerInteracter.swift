@@ -24,7 +24,7 @@ class ServerInteracter {
     
     
     func askToMakeStreamTitle(streamTitle : String, completion: @escaping (Result<Data, Error>) -> Void) {
-        guard let url = URL(string: "http://10.0.0.174:9090/streams") else {
+        guard let url = URL(string: "http://ec2-52-14-122-191.us-east-2.compute.amazonaws.com:9090/streams") else {
             completion(.failure(NSError(domain: "YourApp", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
         }

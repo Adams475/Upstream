@@ -23,6 +23,9 @@
 		F467994A2B16D3EF005644BF /* TCPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46799492B16D3EF005644BF /* TCPConnection.swift */; };
 		F467994C2B16D794005644BF /* ServerInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F467994B2B16D794005644BF /* ServerInteracter.swift */; };
 		F467994E2B196C1A005644BF /* VideoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F467994D2B196C1A005644BF /* VideoClient.swift */; };
+		F49472472B1D248E007DA99A /* StreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49472462B1D248E007DA99A /* StreamsViewController.swift */; };
+		F49472492B1D35AA007DA99A /* RequestingStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49472482B1D35AA007DA99A /* RequestingStreamViewController.swift */; };
+		F494724D2B1D5E1E007DA99A /* StreamingDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494724C2B1D5E1E007DA99A /* StreamingDataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		F46799492B16D3EF005644BF /* TCPConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPConnection.swift; sourceTree = "<group>"; };
 		F467994B2B16D794005644BF /* ServerInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInteracter.swift; sourceTree = "<group>"; };
 		F467994D2B196C1A005644BF /* VideoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoClient.swift; sourceTree = "<group>"; };
+		F49472462B1D248E007DA99A /* StreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamsViewController.swift; sourceTree = "<group>"; };
+		F49472482B1D35AA007DA99A /* RequestingStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestingStreamViewController.swift; sourceTree = "<group>"; };
+		F494724C2B1D5E1E007DA99A /* StreamingDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingDataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +127,13 @@
 				F46799082B16B042005644BF /* ViewController.swift */,
 				F46799382B16BF0E005644BF /* StartStreamingViewController.swift */,
 				F467990A2B16B042005644BF /* Main.storyboard */,
+				F49472482B1D35AA007DA99A /* RequestingStreamViewController.swift */,
+				F49472462B1D248E007DA99A /* StreamsViewController.swift */,
 				F467990D2B16B043005644BF /* Assets.xcassets */,
 				F467990F2B16B043005644BF /* LaunchScreen.storyboard */,
 				F46799122B16B043005644BF /* Info.plist */,
 				F46799472B16C80A005644BF /* StreamingViewController.swift */,
+				F494724C2B1D5E1E007DA99A /* StreamingDataHandler.swift */,
 			);
 			path = UpstreamProject;
 			sourceTree = "<group>";
@@ -296,13 +305,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F467994E2B196C1A005644BF /* VideoClient.swift in Sources */,
+				F49472492B1D35AA007DA99A /* RequestingStreamViewController.swift in Sources */,
 				F467993F2B16C198005644BF /* H264Encoder.swift in Sources */,
 				F46799392B16BF0E005644BF /* StartStreamingViewController.swift in Sources */,
 				F46799482B16C80A005644BF /* StreamingViewController.swift in Sources */,
 				F46799092B16B042005644BF /* ViewController.swift in Sources */,
 				F46799052B16B042005644BF /* AppDelegate.swift in Sources */,
+				F494724D2B1D5E1E007DA99A /* StreamingDataHandler.swift in Sources */,
 				F467994C2B16D794005644BF /* ServerInteracter.swift in Sources */,
 				F467994A2B16D3EF005644BF /* TCPConnection.swift in Sources */,
+				F49472472B1D248E007DA99A /* StreamsViewController.swift in Sources */,
 				F467993D2B16C176005644BF /* VideoCatpureManager.swift in Sources */,
 				F46799072B16B042005644BF /* SceneDelegate.swift in Sources */,
 			);

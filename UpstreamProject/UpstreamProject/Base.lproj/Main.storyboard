@@ -31,7 +31,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Start Viewing"/>
                                 <connections>
-                                    <segue destination="hxc-R1-9VG" kind="show" id="J7A-2M-38g"/>
+                                    <segue destination="f6k-y5-10w" kind="show" id="U4t-Gf-hfI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,7 +49,7 @@
             <objects>
                 <viewController id="hxc-R1-9VG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OWg-OY-cdj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffP-QL-zH2">
@@ -121,6 +121,106 @@
             </objects>
             <point key="canvasLocation" x="2121" y="-35"/>
         </scene>
+        <!--Streams View Controller-->
+        <scene sceneID="nZM-7c-A2y">
+            <objects>
+                <viewController id="f6k-y5-10w" customClass="StreamsViewController" customModule="UpstreamProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XxN-80-wGm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="V4Z-tR-jTO">
+                                <rect key="frame" x="59.666666666666657" y="336.33333333333331" width="274" height="169.33333333333331"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQo-qt-0hS">
+                                        <rect key="frame" x="63.666666666666671" y="0.0" width="146.33333333333331" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Select A Stream"/>
+                                        <connections>
+                                            <action selector="onDropdownClick:" destination="f6k-y5-10w" eventType="touchUpInside" id="uP5-Gi-LOS"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fQ0-CB-URb">
+                                        <rect key="frame" x="0.0" y="41.333333333333371" width="274" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="274" id="0e6-Zd-XVL"/>
+                                            <constraint firstAttribute="width" constant="274" id="XNh-B1-gKa"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="knp-EC-NqQ"/>
+                                            <constraint firstAttribute="height" constant="128" id="nkh-Mk-Cy4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="f6k-y5-10w" id="4Yd-XD-eXj"/>
+                                            <outlet property="delegate" destination="f6k-y5-10w" id="I5S-RL-y93"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rQo-qt-0hS" firstAttribute="centerX" secondItem="V4Z-tR-jTO" secondAttribute="centerX" id="Y0Z-Bq-kQu"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8N-Vp-GDn">
+                                <rect key="frame" x="153" y="802" width="87" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="View Stream"/>
+                                <connections>
+                                    <segue destination="bkf-GS-AqO" kind="show" identifier="SVC" id="jjk-wf-TPe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8pp-GD-Fyi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P8N-Vp-GDn" firstAttribute="centerX" secondItem="XxN-80-wGm" secondAttribute="centerX" id="1jC-LE-1Z6"/>
+                            <constraint firstItem="V4Z-tR-jTO" firstAttribute="centerX" secondItem="XxN-80-wGm" secondAttribute="centerX" id="1mR-7G-YxH"/>
+                            <constraint firstItem="8pp-GD-Fyi" firstAttribute="bottom" secondItem="P8N-Vp-GDn" secondAttribute="bottom" constant="20" id="7Y3-L6-E4m"/>
+                            <constraint firstItem="V4Z-tR-jTO" firstAttribute="centerY" secondItem="XxN-80-wGm" secondAttribute="centerY" id="Gwd-YG-PcS"/>
+                            <constraint firstItem="8pp-GD-Fyi" firstAttribute="bottom" secondItem="P8N-Vp-GDn" secondAttribute="bottom" constant="10" id="Rbb-ZR-p7n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y2w-rG-nGC"/>
+                    <connections>
+                        <outlet property="dropdownButton" destination="rQo-qt-0hS" id="HSS-7j-xdy"/>
+                        <outlet property="tableView" destination="fQ0-CB-URb" id="wa5-1k-0sJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bxh-4d-9Nb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2151.9083969465646" y="675.35211267605632"/>
+        </scene>
+        <!--Requesting Stream View Controller-->
+        <scene sceneID="EXS-RF-40t">
+            <objects>
+                <viewController storyboardIdentifier="viewStream" id="bkf-GS-AqO" customClass="RequestingStreamViewController" customModule="UpstreamProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I4a-kO-uXj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcL-k9-XEY">
+                                <rect key="frame" x="128.66666666666666" y="757" width="135.99999999999997" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stop Watching"/>
+                                <connections>
+                                    <action selector="onStopWatching:" destination="bkf-GS-AqO" eventType="touchUpInside" id="Egz-dQ-uTF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mja-Ek-mpS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HcL-k9-XEY" firstAttribute="centerX" secondItem="I4a-kO-uXj" secondAttribute="centerX" id="Cs4-hb-Kuc"/>
+                            <constraint firstItem="Mja-Ek-mpS" firstAttribute="bottom" secondItem="HcL-k9-XEY" secondAttribute="bottom" constant="50" id="Sn5-H6-b95"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZWJ-8I-140"/>
+                    <connections>
+                        <outlet property="buttonStopWatching" destination="HcL-k9-XEY" id="llX-bQ-VG2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9YN-LF-sgR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3063" y="675"/>
+        </scene>
         <!--Streaming View Controller-->
         <scene sceneID="KeD-tW-ahf">
             <objects>
@@ -129,27 +229,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXW-rd-9KW">
-                                <rect key="frame" x="59" y="722" width="118" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
-                                <connections>
-                                    <action selector="startButtonTapped:" destination="HTm-Od-SnD" eventType="touchUpInside" id="tEc-UL-rDg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-ko-MOA">
-                                <rect key="frame" x="264" y="731" width="60" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Stop"/>
-                                <connections>
-                                    <action selector="stopButtonTapped:" destination="HTm-Od-SnD" eventType="touchUpInside" id="YT7-qr-WcZ"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="kEz-c4-Cq4">
+                                <rect key="frame" x="10" y="724" width="373" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXW-rd-9KW">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="34.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="VwS-Vu-VSQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start (Encoded)"/>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="HTm-Od-SnD" eventType="touchUpInside" id="tEc-UL-rDg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpY-Ba-RbC">
+                                        <rect key="frame" x="163" y="0.0" width="109.66666666666669" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start (Raw)"/>
+                                        <connections>
+                                            <action selector="startRawButtonTapped:" destination="HTm-Od-SnD" eventType="touchUpInside" id="p61-DQ-gTL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-ko-MOA">
+                                        <rect key="frame" x="285.66666666666669" y="0.0" width="87.333333333333314" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopButtonTapped:" destination="HTm-Od-SnD" eventType="touchUpInside" id="YT7-qr-WcZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SRB-8G-zPy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kEz-c4-Cq4" secondAttribute="trailing" constant="10" id="4r1-lX-mzt"/>
+                            <constraint firstItem="kEz-c4-Cq4" firstAttribute="leading" secondItem="2kw-6x-ue2" secondAttribute="leading" constant="10" id="SyU-KH-Aqf"/>
+                            <constraint firstItem="kEz-c4-Cq4" firstAttribute="centerX" secondItem="2kw-6x-ue2" secondAttribute="centerX" id="cl9-KN-9u0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g3g-zA-Acp"/>
                 </viewController>

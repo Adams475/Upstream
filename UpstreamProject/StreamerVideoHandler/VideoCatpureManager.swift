@@ -122,7 +122,7 @@ class VideoCaptureManager {
             try addVideoOutputToSession()
             
             if let connection = session.connections.first {
-                connection.videoRotationAngle = 0 //Might be the source of a bug. Look into addConnection or video rotation angle API.
+                connection.videoRotationAngle = 90 //Might be the source of a bug. Look into addConnection or video rotation angle API.
             }
         } catch {
             print("error ocurred : \(error.localizedDescription)")

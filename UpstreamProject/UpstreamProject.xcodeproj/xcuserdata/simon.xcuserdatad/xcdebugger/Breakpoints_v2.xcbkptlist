@@ -14,8 +14,8 @@
             filePath = "UpstreamProject/VideoClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "startSendingVideoToServer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,10 +30,58 @@
             filePath = "UpstreamProject/VideoClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "startSendingVideoToServer()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3E07C0F-77E7-4E6B-8B9B-E26C0F637AFF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StreamerVideoHandler/H264Encoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "H264Encoder"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "B3E07C0F-77E7-4E6B-8B9B-E26C0F637AFF - aea37e4935c72a3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for naluStartCode"
+                  moduleName = "UpstreamProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simon/Desktop/NewtorksFinalProj/UpstreamProject/StreamerVideoHandler/H264Encoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "B3E07C0F-77E7-4E6B-8B9B-E26C0F637AFF - c8c01836414012ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UpstreamProject.H264Encoder.naluStartCode.unsafeMutableAddressor : Foundation.Data"
+                  moduleName = "UpstreamProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simon/Desktop/NewtorksFinalProj/UpstreamProject/StreamerVideoHandler/H264Encoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
